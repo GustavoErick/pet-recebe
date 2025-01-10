@@ -1,5 +1,5 @@
 # :checkered_flag: PET RECEBE 
-(Breve descrição do que o seu projeto faz.)
+(Breve descrição do que o seu projeto faz.)  
 Uma plataforma web que informatiza e facilita o gerenciamento do projeto PET Recebe, possibilitando a solicitação de visitas técnicas ao campus da UFC em Quixadá e promovendo maior interação com o público-alvo.
 
 ## :technologist: Membros da equipe
@@ -13,7 +13,7 @@ Lucas Anthony Soares de Sousa - 539300
 Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das solicitações de visitas técnicas e na divulgação das atividades realizadas pelo projeto.
 
 ## :eyes: Público-Alvo
-(Público-alvo do projeto)
+(Público-alvo do projeto)  
 - Escolas de ensino médio e técnico interessadas em realizar visitas técnicas ao campus da UFC em Quixadá;  
 - Estudantes que desejam conhecer o ambiente acadêmico e os cursos de tecnologia da informação.
 
