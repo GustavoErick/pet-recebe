@@ -9,7 +9,7 @@ Beatriz Nascimento de Oliveira - 537634
 Lucas Anthony Soares de Sousa - 539300
 
 ## :bulb: Objetivo Geral
-(Descrever o objetivo de geral do projeto)
+(Descrever o objetivo de geral do projeto)  
 Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das solicitações de visitas técnicas e na divulgação das atividades realizadas pelo projeto.
 
 ## :eyes: Público-Alvo
