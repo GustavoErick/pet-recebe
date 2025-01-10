@@ -4,8 +4,8 @@ Uma plataforma web que informatiza e facilita o gerenciamento do projeto PET Rec
 
 ## :technologist: Membros da equipe
 
-Gustavo Erick Viana Leandro - 536884
-Beatriz Nascimento de Oliveira - 537634
+Gustavo Erick Viana Leandro - 536884  
+Beatriz Nascimento de Oliveira - 537634  
 Lucas Anthony Soares de Sousa - 539300
 
 ## :bulb: Objetivo Geral
