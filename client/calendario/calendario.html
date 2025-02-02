@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calendário</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/calendario.css" />
+  </head>
+
+  <body>
+    <header class="header-bg">
+      <div class="header">
+        <div>
+          <img src="../assets/img/bus-front-fill.svg" alt="icon">
+          <span>PETRecebe</span>
+          <img src="../assets/img/geo-alt-fill.svg" alt="icon">
+        </div>
+        <div class="header-pages">
+          <a href="/">home</a>
+          <a href="/">relatos</a>
+          <a href="/">sobre</a>
+        </div>
+        <div class="">
+          <a href="../auth/signin.html">login</a>
+          <a href="../form/form.html" class="header-button">agendar sua visita</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="calendar-bg">
+      <div class="calendar">
+        <h1>Escolha o dia:</h1>
+        <div id="calendar"></div>
+      </div>
+    </div>
+
+    <script src="calendario.js"></script>
+  </body>
+</html>

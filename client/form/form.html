@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/form.css" />
+    <title>Cadastrar visita</title>
+  </head>
+
+  <body>
+    <header class="header-bg">
+      <div class="header">
+        <div>
+          <img src="../assets/img/bus-front-fill.svg" alt="icon">
+          <span>PETRecebe</span>
+          <img src="../assets/img/geo-alt-fill.svg" alt="icon">
+        </div>
+        <div class="header-pages">
+          <a href="/">home</a>
+          <a href="/">relatos</a>
+          <a href="/">sobre</a>
+        </div>
+        <div class="">
+          <a href="../auth/signin.html">login</a>
+          <a href="../form/form.html" class="header-button">agendar sua visita</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="form-agendamento-bg">
+      <div class="form-agendamento">
+        <h1>Solicitar agendamento:</h1>
+
+        <form action="" method="POST">
+          <div class="span2">
+            <label for="escola"><p>Escola:</p></label>
+            <select id="escola" name="escola">
+              <option value=""></option>
+              <option value="escola1">Escola Exemplo 1</option>
+              <option value="escola2">Escola Exemplo 2</option>
+              <option value="escola3">Escola Exemplo 3</option>
+            </select>
+            <br>
+            <span>Não encontrou sua escola? <a href="/">Cadastre aqui</a></span>
+          </div>
+
+          <div class="span2">
+            <label for="responsavel"><p>Responsável:</p></label>
+            <input type="text" id="responsavel" name="responsavel" required />
+          </div>
+
+          <div>
+            <label for="quantidade"><p>Quantidade de alunos:</p></label>
+            <input type="number" id="quantidade" name="quantidade" required />
+          </div>
+
+          <div>
+            <label for="serie"><p>Série:</p></label>
+            <input type="text" id="serie" name="serie" required />
+          </div>
+
+          <div class="span2">
+            <label for="curso"><p>Curso:</p></label>
+            <input type="text" id="curso" name="curso" required />
+          </div>
+
+          <div>
+            <label for="horario_inicio"><p>Horário (Início):</p></label>
+            <input
+              type="time"
+              id="horario_inicio"
+              name="horario_inicio"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="horario_fim"><p>Horário (Fim):</p></label>
+            <input type="time" id="horario_fim" name="horario_fim" required />
+          </div>
+
+          <div>
+            <label for="dia"><p>Dia:</p></label>
+            <input type="date" id="dia" name="dia" required />
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
