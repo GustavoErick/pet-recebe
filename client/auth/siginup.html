@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - PETRecebe</title>
+    <link rel="stylesheet" href="../assets/css/signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+    
+        <div class="left-side"></div>
+
+        <div class="right-side">
+            <h2>Cadastro</h2>
+            <form>
+                <div class="input-group">
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Seu nome">
+                    </div>
+                    <div>
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" id="sobrenome" placeholder="Seu sobrenome">
+                    </div>
+                </div>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Digite seu email">
+
+                <div class="input-group">
+                    <div>
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" placeholder="Seu telefone">
+                    </div>
+                    <div>
+                        <label for="cargo">Cargo</label>
+                        <select id="cargo">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="professor">Professor</option>
+                            <option value="coordenador">Coordenador</option>
+                            <option value="diretor">Diretor</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha">
+
+                <div class="checkbox">
+                    <input type="checkbox" id="termos">
+                    <label for="termos">Li e aceito os <a href="#">Termos & Condições</a></label>
+                </div>
+
+                <button type="submit">Criar Conta</button>
+
+                <p class="login-link">Já possui uma conta? <a href="signin.html">Entre aqui</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

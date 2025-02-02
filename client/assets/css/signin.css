@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    /* border: solid 1px red; */
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #3747A5;
+}
+
+.container {
+    display: flex;
+    width: 900px;
+    height: 600px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.right-side {
+    flex: 1; 
+    height: 100%;
+    background-image: url("/client/assets/img/pet-recebe-img.png"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+}
+
+.left-side {
+    width: 60%;
+    padding: 40px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222222;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input:focus {
+    border: 1px solid #FABE00;
+}
+
+label {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #222222;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 30px;
+    font-size: 14px;
+    outline: none;
+}
+
+button {
+    background: #FABE00;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 30px;
+}
+
+button:hover {
+    background: #e6a600;
+}
+
+p {
+    color: #222222;
+}
+
+.cadastro-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.cadastro-link a {
+    font-weight: bold;
+    color: black;
+}
