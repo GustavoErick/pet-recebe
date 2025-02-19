@@ -7,16 +7,9 @@
 body {
     background-color: #FFFFFF;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
-}
-
-.faq-container {
-    width: 100%;
-    max-width: 800px;
-    padding: 20px;
-    margin-top: 50px;
 }
 
 h1 {
@@ -25,6 +18,59 @@ h1 {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 30px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.logo img {
+    width: 20px;
+    filter: invert(73%) sepia(98%) saturate(585%) hue-rotate(-14deg);
+}
+
+.logo {
+    display: flex;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    align-items: center;
+}
+
+.header {
+    background-color: #2E3192;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+}
+
+.nav .btn {
+    background-color: #FABE00;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin-top: 50px;
 }
 
 .faq-item {
