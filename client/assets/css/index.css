@@ -229,7 +229,6 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Adiciona um leve efeito de escala quando a imagem está no centro */
 .gallery-item:hover {
   transform: scale(1.05);
 }
@@ -403,14 +402,14 @@ body {
 
 .footer-brand {
   display: flex;
-  flex-direction: column; /* Mantém os itens empilhados */
+  flex-direction: column; 
   align-items: center;
   text-align: center;
 }
 
 .footer-icons {
   display: flex;
-  gap: 8px; /* Espaçamento entre os ícones */
+  gap: 8px; 
   justify-content: center;
   align-items: center;
 }
