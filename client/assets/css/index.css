@@ -355,11 +355,11 @@ body {
   color: #e0e0e0;
 }
 
-/* Texto do relato */
+
 .testimonial p {
   font-size: 1rem;
   font-style: italic;
-  margin-bottom: 50px; /* Espaço para o rodapé */
+  margin-bottom: 50px; 
 }
 
 .about {
