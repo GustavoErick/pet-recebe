@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "avaliacaos",
+  "info": {
+    "singularName": "avaliacao",
+    "pluralName": "avaliacaos",
+    "displayName": "Avaliacao"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "feedback": {
+      "type": "text",
+      "required": true
+    },
+    "visita": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::visita.visita"
+    }
+  }
+}

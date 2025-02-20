@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "escolas",
+  "info": {
+    "singularName": "escola",
+    "pluralName": "escolas",
+    "displayName": "Escola",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "cidade": {
+      "type": "string",
+      "required": true
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "EEEP",
+        "Ensino Regular",
+        "IF",
+        "Outro"
+      ],
+      "required": true
+    }
+  }
+}

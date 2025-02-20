@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visitas",
+  "info": {
+    "singularName": "visita",
+    "pluralName": "visitas",
+    "displayName": "Visita",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "quantidade_alunos": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "serie": {
+      "type": "string",
+      "required": true
+    },
+    "curso": {
+      "type": "string"
+    },
+    "data": {
+      "type": "date",
+      "required": true
+    },
+    "duracao_inicio": {
+      "type": "time",
+      "required": true
+    },
+    "duracao_fim": {
+      "type": "time",
+      "required": true
+    },
+    "situacao": {
+      "type": "enumeration",
+      "enum": [
+        "Pendente",
+        "Confirmada",
+        "Recusada"
+      ],
+      "default": "Pendente",
+      "required": true
+    },
+    "responsavel": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "escola": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::escola.escola"
+    }
+  }
+}
