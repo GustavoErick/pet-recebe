@@ -17,7 +17,7 @@
 
         <div class="right-side">
             <h2>Cadastro</h2>
-            <form>
+            <form id="signupForm">
                 <div class="input-group">
                     <div>
                         <label for="nome">Nome</label>
@@ -41,10 +41,10 @@
                         <label for="cargo">Cargo</label>
                         <select id="cargo">
                             <option value="" disabled selected>Selecione</option>
-                            <option value="professor">Professor</option>
-                            <option value="coordenador">Coordenador</option>
-                            <option value="diretor">Diretor</option>
-                            <option value="outro">Outro</option>
+                            <option value="Professor">Professor</option>
+                            <option value="Coordenador">Coordenador</option>
+                            <option value="Diretor">Diretor</option>
+                            <option value="Outro">Outro</option>
                         </select>
                     </div>
                 </div>
@@ -63,5 +63,7 @@
             </form>
         </div>
     </div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="../js/signup.js"></script> 
 </body>
 </html>
