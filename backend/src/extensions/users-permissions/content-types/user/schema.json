@@ -80,6 +80,10 @@
         "Outro"
       ],
       "required": true
+    },
+    "sobrenome": {
+      "type": "string",
+      "required": true
     }
   }
 }
