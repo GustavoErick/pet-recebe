@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAvaliacaoAvaliacao extends Struct.CollectionTypeSchema {
   collectionName: 'avaliacaos';
   info: {
+    description: '';
     displayName: 'Avaliacao';
     pluralName: 'avaliacaos';
     singularName: 'avaliacao';

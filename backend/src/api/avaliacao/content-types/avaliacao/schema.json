@@ -4,7 +4,8 @@
   "info": {
     "singularName": "avaliacao",
     "pluralName": "avaliacaos",
-    "displayName": "Avaliacao"
+    "displayName": "Avaliacao",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
