@@ -18,7 +18,14 @@
     "visita": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::visita.visita"
+      "target": "api::visita.visita",
+      "inversedBy": "avaliacao"
+    },
+    "usuario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "avaliacaos"
     }
   }
 }
