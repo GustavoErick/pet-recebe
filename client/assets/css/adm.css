@@ -1,0 +1,194 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* cabeçalho */
+.header {
+  background-color: #2E3192;
+  padding: 15px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1100px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  width: 24px;
+  filter: invert(73%) sepia(98%) saturate(585%) hue-rotate(-14deg);
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.nav ul li .login {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.nav ul li .btn-visit {
+  background-color: #FABE00;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.nav ul li .btn-visit:hover {
+  background-color: #E0A800;
+}
+
+
+.visit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.visit-table th, .visit-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.visit-table th {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+.visit-table td {
+    background-color: #fff;
+}
+
+/* Status */
+.status {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.approved {
+    background-color: #b0e8c4;
+    color: #22733a;
+}
+
+.denied {
+    background-color: #f8caca;
+    color: #a60000;
+}
+
+.pending {
+    background-color: #f7e2a2;
+    color: #8a6900;
+}
+
+/* Dropdown */
+.status-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.status-btn {
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.status-btn.pending {
+    background-color: #f7e2a2;
+    color: #8a6900;
+}
+
+.status-btn.approved {
+    background-color: #b0e8c4;
+    color: #22733a;
+}
+
+.status-btn.denied {
+    background-color: #f8caca;
+    color: #a60000;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 120px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.dropdown-menu button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown-menu button:hover {
+    background-color: #eee;
+}
+
+.dropdown-menu.show {
+    display: block;
+}

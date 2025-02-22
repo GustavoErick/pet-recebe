@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETRecebe - Administração</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/client/assets/css/adm.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="/client/assets/img/bus-front-fill.svg" alt="Ícone de ônibus">
+                <span class="logo-text">PETRecebe</span>
+                <img src="/client/assets/img/geo-alt-fill.svg" alt="Ícone de localização">
+            </div>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">dúvidas</a></li>
+                    <li><a href="#">relatos</a></li>
+                    <li><a href="#">sobre</a></li>
+                    <li><a href="/client/auth/signin.html" class="login">login</a></li>
+                    <li><a href="#" class="btn-visit">agende sua visita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Solicitações de visita</h1>
+        <table class="visit-table">
+            <thead>
+                <tr>
+                    <th>DATA</th>
+                    <th>HORA</th>
+                    <th>QTD. ALUNOS</th>
+                    <th>Escola</th>
+                    <th>Responsável</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+
+            </tbody>
+        </table>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
