@@ -54,6 +54,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::escola.escola"
+    },
+    "avaliacao": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::avaliacao.avaliacao",
+      "mappedBy": "visita"
     }
   }
 }

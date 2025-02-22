@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             },
             params: {
                 "filters[responsavel][$eq]": userId, 
-                "populate": "*" 
+                "populate": "avaliacao.usuario"
             }
         });
 
@@ -34,17 +34,15 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return;
             }
 
-            const { data, duracao_inicio, duracao_fim, quantidade_alunos, situacao, id } = visita; 
+            const { data, duracao_inicio, duracao_fim, quantidade_alunos, situacao, id, avaliacao } = visita; 
 
             if (!data || !duracao_inicio || !duracao_fim) {
                 console.error("Erro: Campos obrigatórios ausentes em visita", visita);
                 return;
             }
 
-            // const visitaData = new Date(data);
             const [year, month, day] = data.split("-");
             const visitaData = new Date(`${month}/${day}/${year}`);
-
             const visitaHoraFim = new Date(`${data}T${duracao_fim}`);
 
             let statusHTML = "";
@@ -57,8 +55,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             let avaliarHTML = "";
+
             if (situacao === "Confirmada" && visitaHoraFim < now) {
-                avaliarHTML = `<a href="#" class="avaliar-link" data-id="${id}">Avaliar</a>`;
+                if (!avaliacao || avaliacao.length === 0) {
+                    avaliarHTML = `<a href="#" class="avaliar-link" data-id="${id}">Avaliar</a>`;
+                } else {
+                    avaliarHTML = `<span class="avaliado">Avaliado</span>`;
+                }
             }
 
             const row = `
@@ -66,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <td>${visitaData.toLocaleDateString()}</td>
                     <td>${duracao_inicio.split(":").slice(0, 2).join(":")} - ${duracao_fim.split(":").slice(0, 2).join(":")}</td>
                     <td>${quantidade_alunos}</td>
-                    <td>${statusHTML} </td>
+                    <td>${statusHTML}</td>
                     <td>${avaliarHTML}</td>
                 </tr>
             `;
@@ -77,13 +80,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             link.addEventListener("click", (e) => {
                 e.preventDefault();
                 visitaSelecionada = e.target.getAttribute("data-id");
-                // tentando converter pra integer 
-                const visitaId = parseInt(visitaSelecionada)
 
                 if (!visitaSelecionada) {
                     alert("Erro: ID da visita não encontrado!");
                     return;
                 }
+
                 let modal = document.createElement("div");
                 modal.id = "modal-avaliacao";
                 modal.classList.add("modal");
@@ -98,7 +100,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                     </div>
                 `;
                 document.body.appendChild(modal);
-
                 modal.style.display = "flex"; 
 
                 document.getElementById("fechar-modal").addEventListener("click", () => {
@@ -107,17 +108,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 document.getElementById("enviar-avaliacao").addEventListener("click", async () => {
                     const feedback = document.getElementById("feedback").value.trim();
-                
+
                     if (!feedback) {
                         alert("Por favor, escreva um feedback antes de enviar.");
                         return;
                     }
-                
+
                     try {
                         const response = await api.post("/avaliacaos", {
                             data: {
                                 feedback: feedback,
-                                visita: visitaId
+                                visita: { id: visitaSelecionada },
+                                usuario: { id: userId }
                             }
                         }, {
                             headers: {
@@ -126,18 +128,17 @@ document.addEventListener("DOMContentLoaded", async () => {
                             params: {
                                 populate: "visita"
                             }
-                        });                        
-                
+                        });
+
                         console.log("Resposta da API:", response.data);
-                
                         alert("Avaliação enviada com sucesso!");
                         modal.remove();
+                        location.reload();
                     } catch (error) {
                         console.error("Erro ao enviar avaliação:", error);
                         alert("Erro ao enviar avaliação. Tente novamente.");
                     }
                 });
-                
             });
         });
 

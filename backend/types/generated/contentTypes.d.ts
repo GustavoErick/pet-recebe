@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAvaliacaoAvaliacao extends Struct.CollectionTypeSchema {
   collectionName: 'avaliacaos';
   info: {
+    description: '';
     displayName: 'Avaliacao';
     pluralName: 'avaliacaos';
     singularName: 'avaliacao';
@@ -394,6 +395,10 @@ export interface ApiAvaliacaoAvaliacao extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    usuario: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     visita: Schema.Attribute.Relation<'oneToOne', 'api::visita.visita'>;
   };
 }
@@ -444,6 +449,10 @@ export interface ApiVisitaVisita extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    avaliacao: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::avaliacao.avaliacao'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -940,6 +949,10 @@ export interface PluginUsersPermissionsUser
     draftAndPublish: false;
   };
   attributes: {
+    avaliacaos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::avaliacao.avaliacao'
+    >;
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     cargo: Schema.Attribute.Enumeration<
       ['Professor', 'Coordenador', 'Diretor', 'Monitor', 'Outro']

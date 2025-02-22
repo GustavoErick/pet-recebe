@@ -80,6 +80,12 @@
         "Outro"
       ],
       "required": true
+    },
+    "avaliacaos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::avaliacao.avaliacao",
+      "mappedBy": "usuario"
     }
   }
 }
