@@ -21,12 +21,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             },
             params: {
                 "filters[responsavel][$eq]": userId, 
-                "populate": "*" 
+                "populate": "avaliacao.usuario"
             }
         });
 
         const visitas = res.data.data;
-        console.log("Visitas carregadas:", visitas.map(v => ({ id: v.id, documentId: v.documentId, data: v.data })));
         const now = new Date();
 
         visitas.forEach(visita => {
@@ -35,17 +34,15 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return;
             }
 
-            const { data, duracao_inicio, duracao_fim, quantidade_alunos, situacao, id } = visita; 
+            const { data, duracao_inicio, duracao_fim, quantidade_alunos, situacao, id, avaliacao } = visita; 
 
             if (!data || !duracao_inicio || !duracao_fim) {
                 console.error("Erro: Campos obrigatórios ausentes em visita", visita);
                 return;
             }
 
-            // const visitaData = new Date(data);
             const [year, month, day] = data.split("-");
             const visitaData = new Date(`${month}/${day}/${year}`);
-
             const visitaHoraFim = new Date(`${data}T${duracao_fim}`);
 
             let statusHTML = "";
@@ -58,10 +55,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             let avaliarHTML = "";
-            if (situacao === "Confirmada" && visitaHoraFim < now) {
-                avaliarHTML = `<a href="#" class="avaliar-link" data-id="${id}">Avaliar</a>`;
-                //avaliarHTML = `<a href="#" class="avaliar-link" data-documentid="${visita.documentId}">Avaliar</a>`;
 
+            if (situacao === "Confirmada" && visitaHoraFim < now) {
+                if (!avaliacao || avaliacao.length === 0) {
+                    avaliarHTML = `<a href="#" class="avaliar-link" data-id="${id}">Avaliar</a>`;
+                } else {
+                    avaliarHTML = `<span class="avaliado">Avaliado</span>`;
+                }
             }
 
             const row = `
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <td>${visitaData.toLocaleDateString()}</td>
                     <td>${duracao_inicio.split(":").slice(0, 2).join(":")} - ${duracao_fim.split(":").slice(0, 2).join(":")}</td>
                     <td>${quantidade_alunos}</td>
-                    <td>${statusHTML} </td>
+                    <td>${statusHTML}</td>
                     <td>${avaliarHTML}</td>
                 </tr>
             `;
@@ -80,13 +80,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             link.addEventListener("click", (e) => {
                 e.preventDefault();
                 visitaSelecionada = e.target.getAttribute("data-id");
-                // tentando converter pra integer 
-                const visitaId = parseInt(visitaSelecionada)
 
                 if (!visitaSelecionada) {
                     alert("Erro: ID da visita não encontrado!");
                     return;
                 }
+
                 let modal = document.createElement("div");
                 modal.id = "modal-avaliacao";
                 modal.classList.add("modal");
@@ -101,7 +100,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                     </div>
                 `;
                 document.body.appendChild(modal);
-
                 modal.style.display = "flex"; 
 
                 document.getElementById("fechar-modal").addEventListener("click", () => {
@@ -110,17 +108,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 document.getElementById("enviar-avaliacao").addEventListener("click", async () => {
                     const feedback = document.getElementById("feedback").value.trim();
-                
+
                     if (!feedback) {
                         alert("Por favor, escreva um feedback antes de enviar.");
                         return;
                     }
-                
+
                     try {
                         const response = await api.post("/avaliacaos", {
                             data: {
                                 feedback: feedback,
-                                visita: { id: visitaId }
+                                visita: { id: visitaSelecionada },
+                                usuario: { id: userId }
                             }
                         }, {
                             headers: {
@@ -129,101 +128,20 @@ document.addEventListener("DOMContentLoaded", async () => {
                             params: {
                                 populate: "visita"
                             }
-                        });                        
-                
+                        });
+
                         console.log("Resposta da API:", response.data);
-                
                         alert("Avaliação enviada com sucesso!");
                         modal.remove();
+                        location.reload();
                     } catch (error) {
                         console.error("Erro ao enviar avaliação:", error);
                         alert("Erro ao enviar avaliação. Tente novamente.");
                     }
                 });
-                
             });
         });
 
-        // document.querySelectorAll(".avaliar-link").forEach(link => {
-        //     link.addEventListener("click", (e) => {
-        //         e.preventDefault();
-        //         const documentIdSelecionado = e.target.getAttribute("data-documentid");
-        
-        //         if (!documentIdSelecionado) {
-        //             alert("Erro: Document ID da visita não encontrado!");
-        //             return;
-        //         }
-        
-        //         console.log("Document ID selecionado:", documentIdSelecionado);
-        
-        //         // Buscar a visita correspondente pelo documentId
-        //         const visitaEncontrada = visitas.find(visita => visita.documentId === documentIdSelecionado);
-        
-        //         if (!visitaEncontrada) {
-        //             alert("Erro: Não foi possível encontrar a visita com esse Document ID.");
-        //             return;
-        //         }
-        
-        //         const visitaId = visitaEncontrada.id; // ID numérico real
-        
-        //         console.log("ID real da visita:", visitaId);
-        
-        //         let modal = document.createElement("div");
-        //         modal.id = "modal-avaliacao";
-        //         modal.classList.add("modal");
-        //         modal.innerHTML = `
-        //             <div class="modal-content">
-        //                 <h2>Avaliação</h2>
-        //                 <textarea id="feedback" placeholder="Escreva sua avaliação aqui..."></textarea>
-        //                 <div class="modal-actions">
-        //                     <button id="fechar-modal">Cancelar</button>
-        //                     <button id="enviar-avaliacao">Enviar</button>
-        //                 </div>
-        //             </div>
-        //         `;
-        //         document.body.appendChild(modal);
-        
-        //         modal.style.display = "flex";
-        
-        //         document.getElementById("fechar-modal").addEventListener("click", () => {
-        //             modal.remove();
-        //         });
-        
-        //         document.getElementById("enviar-avaliacao").addEventListener("click", async () => {
-        //             const feedback = document.getElementById("feedback").value.trim();
-        
-        //             if (!feedback) {
-        //                 alert("Por favor, escreva um feedback antes de enviar.");
-        //                 return;
-        //             }
-        
-        //             try {
-        //                 const response = await api.post("/avaliacaos", {
-        //                     data: {
-        //                         feedback: feedback,
-        //                         visita: { id: visitaId } // Agora enviando o ID numérico
-        //                     }
-        //                 }, {
-        //                     headers: {
-        //                         Authorization: `Bearer ${token}`
-        //                     }, 
-        //                     params: {
-        //                         populate: "visita"
-        //                     }
-        //                 });
-        
-        //                 console.log("Resposta da API:", response.data);
-        
-        //                 alert("Avaliação enviada com sucesso!");
-        //                 modal.remove();
-        //             } catch (error) {
-        //                 console.error("Erro ao enviar avaliação:", error);
-        //                 alert("Erro ao enviar avaliação. Tente novamente.");
-        //             }
-        //         });
-        //     });
-        // });
-        
     } catch (error) {
         console.error("Erro ao carregar visitas:", error);
         alert("Erro ao carregar seus agendamentos. Tente novamente mais tarde.");

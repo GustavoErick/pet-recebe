@@ -4,53 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/form.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Cadastrar visita</title>
   </head>
 
   <body>
     <header class="header">
       <div class="header-container">
-          <div class="logo">
-              <img src="/client/assets/img/bus-front-fill.svg" alt="Ícone de ônibus">
-              <span class="logo-text">PETRecebe</span>
-              <img src="/client/assets/img/geo-alt-fill.svg" alt="Ícone de localização">
-          </div>
-  
-          <nav class="nav">
-              <ul>
-                  <li><a href="#">dúvidas</a></li>
-                  <li><a href="#">relatos</a></li>
-                  <li><a href="#">sobre</a></li>
-                  <li><a href="/client/auth/signin.html" class="login">login</a></li>
-                  <li><a href="#" class="btn-visit">agende sua visita</a></li>
-              </ul>
-          </nav>
+        <div class="logo">
+          <img
+            src="/client/assets/img/bus-front-fill.svg"
+            alt="Ícone de ônibus"
+          />
+          <span class="logo-text">PETRecebe</span>
+          <img
+            src="/client/assets/img/geo-alt-fill.svg"
+            alt="Ícone de localização"
+          />
+        </div>
+
+        <nav class="nav">
+          <ul>
+            <li><a href="#">dúvidas</a></li>
+            <li><a href="#">relatos</a></li>
+            <li><a href="#">sobre</a></li>
+            <li><a href="/client/auth/signin.html" class="login">login</a></li>
+            <li>
+              <a href="/client/calendario/calendario.html" class="btn-visit"
+                >agende sua visita</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
-  </header>
+    </header>
 
     <div class="form-agendamento-bg">
       <div class="form-agendamento">
-        <h1>Solicitar agendamento:</h1>
+        <h1>Solicitar visita:</h1>
 
         <form action="" method="POST">
           <div class="span2">
             <label for="escola"><p>Escola:</p></label>
             <select id="escola" name="escola">
               <option value=""></option>
-              <option value="escola1">Escola Exemplo 1</option>
-              <option value="escola2">Escola Exemplo 2</option>
-              <option value="escola3">Escola Exemplo 3</option>
             </select>
-            <br>
-            <span>Não encontrou sua escola? <a href="/client/register-institution.html">Cadastre aqui</a></span>
-          </div>
-
-          <div class="span2">
-            <label for="responsavel"><p>Responsável:</p></label>
-            <input type="text" id="responsavel" name="responsavel" required />
+            <br />
+            <span
+              >Não encontrou sua escola?
+              <a href="/client/register-institution.html"
+                >Cadastre aqui</a
+              ></span
+            >
           </div>
 
           <div>
@@ -85,7 +95,7 @@
 
           <div>
             <label for="dia"><p>Dia:</p></label>
-            <input type="date" id="dia" name="dia" required />
+            <input type="date" id="dia" name="dia" readonly required />
           </div>
 
           <button type="submit">Enviar</button>
@@ -95,40 +105,55 @@
 
     <footer class="footer">
       <div class="footer-container">
-          <div class="footer-brand">
-              <div class="footer-icons">
-                  <img src="/client/assets/img/bus-front-fill.svg" alt="Ícone de ônibus">
-                  <img src="/client/assets/img/geo-alt-fill.svg" alt="Ícone de localização">
-              </div>
-              <h3>PETRecebe</h3>
+        <div class="footer-brand">
+          <div class="footer-icons">
+            <img
+              src="/client/assets/img/bus-front-fill.svg"
+              alt="Ícone de ônibus"
+            />
+            <img
+              src="/client/assets/img/geo-alt-fill.svg"
+              alt="Ícone de localização"
+            />
           </div>
-          
-          <div class="footer-section">
-              <h4>Informações</h4>
-              <ul>
-                  <li><a href="#">dúvidas</a></li>
-                  <li><a href="#">relatos</a></li>
-                  <li><a href="#">sobre</a></li>
-              </ul>
+          <h3>PETRecebe</h3>
+        </div>
+
+        <div class="footer-section">
+          <h4>Informações</h4>
+          <ul>
+            <li><a href="#">dúvidas</a></li>
+            <li><a href="#">relatos</a></li>
+            <li><a href="#">sobre</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contatos</h4>
+          <p>petrecebe@ufc.br</p>
+          <p>quiosque da tia, 69 - Cedro</p>
+          <p>Quixadá - CE</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Redes sociais</h4>
+          <div class="social-icons">
+            <a href="#"
+              ><img src="/client/assets/img/instagram.svg" alt="Instagram"
+            /></a>
+            <a href="#"
+              ><img src="/client/assets/img/linkedin.svg" alt="LinkedIn"
+            /></a>
+            <a href="#"
+              ><img src="/client/assets/img/whatsapp.svg" alt="WhatsApp"
+            /></a>
           </div>
-  
-          <div class="footer-section">
-              <h4>Contatos</h4>
-              <p>petrecebe@ufc.br</p>
-              <p>quiosque da tia, 69 - Cedro</p>
-              <p>Quixadá - CE</p>
-          </div>
-  
-          <div class="footer-section">
-              <h4>Redes sociais</h4>
-              <div class="social-icons">
-                  <a href="#"><img src="/client/assets/img/instagram.svg" alt="Instagram"></a>
-                  <a href="#"><img src="/client/assets/img/linkedin.svg" alt="LinkedIn"></a>
-                  <a href="#"><img src="/client/assets/img/whatsapp.svg" alt="WhatsApp"></a>
-              </div>
-          </div>
+        </div>
       </div>
       <p class="footer-copy">© 2025 PETRecebe. Todos os direitos reservados.</p>
-  </footer>   
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/client/js/form.js"></script>
   </body>
 </html>
