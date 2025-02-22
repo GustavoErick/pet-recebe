@@ -61,8 +61,8 @@
                         <select id="cargo">
                             <option value="" disabled selected>Selecione seu cargo</option>
                             <option value="professor">Professor</option>
-                            <option value="estudante">Estudante</option>
-                            <option value="coordenador">Coordenador</option>
+                            <option value="estudante">Coordenador</option>
+                            <option value="coordenador">Diretor</option>
                         </select>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                     <input type="password" id="nova-senha" placeholder="Digite sua nova senha">
                 </div>
 
-                <button type="submit">Editar perfil</button>
+                <button type="submit">Salvar alterações</button>
             </form>
         </section>
     </main>
@@ -119,6 +119,9 @@
         </div>
         <p class="footer-copy">© 2025 PETRecebe. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/client/assets/js/profile.js" type="module"></script>
 
 </body>
 </html>
