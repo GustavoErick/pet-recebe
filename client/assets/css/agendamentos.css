@@ -22,6 +22,20 @@ h2 {
     color: #222222;
 }
 
+.btn {
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 100px 10px 100px;
+    width: 230px;
+    text-align: center;
+    background: #fbbc04;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+
 .tabela-container {
     background: white;
     border-radius: 10px;

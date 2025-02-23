@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             },
             params: {
                 "filters[responsavel][$eq]": userId, 
-                "populate": "avaliacao.usuario"
+                "populate": "*"
             }
         });
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return;
             }
 
-            const { data, duracao_inicio, duracao_fim, quantidade_alunos, situacao, id, avaliacao, documentId } = visita; 
+            const { data, duracao_inicio, duracao_fim, quantidade_alunos, situacao, id, avaliacao, documentId, escola } = visita; 
 
             if (!data || !duracao_inicio || !duracao_fim) {
                 console.error("Erro: Campos obrigatórios ausentes em visita", visita);
@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <td>${visitaData.toLocaleDateString()}</td>
                     <td>${duracao_inicio.split(":").slice(0, 2).join(":")} - ${duracao_fim.split(":").slice(0, 2).join(":")}</td>
                     <td>${quantidade_alunos}</td>
+                    <td>${escola ? escola.nome : "Não informado"}</td>
                     <td>${statusHTML}</td>
                     <td>${avaliarHTML}</td>
                 </tr>

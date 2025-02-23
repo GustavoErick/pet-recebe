@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const escolas = res.data.data;
     escolas.forEach((escola) => {
       const option = document.createElement("option");
-      option.value = escola.id;
+      console.log(escola.documentId);
+      option.value = escola.documentId;
       option.textContent = escola.nome;
       selectEscola.appendChild(option);
     });
@@ -46,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const formData = {
       responsavel: parseInt(userId, 10),
-      escola: parseInt(selectEscola.value, 10),
+      escola: { connect: [selectEscola.value] },
       quantidade_alunos: parseInt(
         document.getElementById("quantidade").value,
         10
@@ -80,6 +81,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       );
       alert("Agendamento realizado com sucesso!");
       form.reset();
+      window.location.href = "../html/agendamentos.html"
     } catch (error) {
       console.error("Erro ao enviar agendamento:", error);
       alert("Erro ao enviar agendamento. Tente novamente.");

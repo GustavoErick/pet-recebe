@@ -70,7 +70,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         } else if (occupiedDates.includes(dataStr)) {
           alert("Data indisponível");
         } else {
-          window.location.href = "../form/form.html?data=" + dataStr;
+          // window.location.href = "../form/form.html?data=" + dataStr;
+          window.location.href = "../html/agendarvisitas.html?data=" + dataStr;
         }
       },
     });
