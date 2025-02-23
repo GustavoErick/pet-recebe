@@ -3,7 +3,7 @@ import api from "./axiosConfig.js";
 document.addEventListener("DOMContentLoaded", async () => {
     const tabelaVisitas = document.getElementById("tabela-visitas");
 
-    let visitaSelecionada = null;
+    let documentIdVisita = null;
 
     try {
         const token = localStorage.getItem("token");
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return;
             }
 
-            const { data, duracao_inicio, duracao_fim, quantidade_alunos, situacao, id, avaliacao } = visita; 
+            const { data, duracao_inicio, duracao_fim, quantidade_alunos, situacao, id, avaliacao, documentId } = visita; 
 
             if (!data || !duracao_inicio || !duracao_fim) {
                 console.error("Erro: Campos obrigatórios ausentes em visita", visita);
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             if (situacao === "Confirmada" && visitaHoraFim < now) {
                 if (!avaliacao || avaliacao.length === 0) {
-                    avaliarHTML = `<a href="#" class="avaliar-link" data-id="${id}">Avaliar</a>`;
+                    avaliarHTML = `<a href="#" class="avaliar-link" data-id="${documentId}">Avaliar</a>`;
                 } else {
                     avaliarHTML = `<span class="avaliado">Avaliado</span>`;
                 }
@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.querySelectorAll(".avaliar-link").forEach(link => {
             link.addEventListener("click", (e) => {
                 e.preventDefault();
-                visitaSelecionada = e.target.getAttribute("data-id");
-
-                if (!visitaSelecionada) {
-                    alert("Erro: ID da visita não encontrado!");
+                documentIdVisita = e.target.getAttribute("data-id");
+                console.log(documentIdVisita)
+                if (!documentIdVisita) {
+                    alert("Erro: documentId da visita não encontrado!");
                     return;
                 }
 
@@ -118,7 +118,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                         const response = await api.post("/avaliacaos", {
                             data: {
                                 feedback: feedback,
-                                visita: { id: visitaSelecionada },
+                                visita: { 
+                                    connect: [ documentIdVisita ]
+                                 },
                                 usuario: { id: userId }
                             }
                         }, {

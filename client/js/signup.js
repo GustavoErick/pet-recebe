@@ -75,7 +75,7 @@ async function cadastrar(nome, sobrenome, email, senha, telefone, cargo) {
     localStorage.setItem("token", jwt);
 
     alert(`Conta criada com sucesso! Bem-vindo, ${userData.username}!`);
-    window.location.href = "../index.html"; 
+    window.location.href = "../html/index.html";
   } catch (error) {
     console.error("Erro no cadastro:", error);
 

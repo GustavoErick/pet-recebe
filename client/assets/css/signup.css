@@ -1,17 +1,88 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    /* border: solid 1px red; */
 }
 
 body {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: #F5F5F5;
+}
+
+.header {
+    background-color: #2E3192;
+    padding: 15px 40px;
+    width: 100%;
+    display: flex;
     justify-content: center;
-    height: 100vh;
-    background: #3747A5;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1100px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    width: 24px;
+    filter: invert(73%) sepia(98%) saturate(585%) hue-rotate(-14deg);
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav ul li .login {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.nav ul li .btn-visit {
+    background-color: #FABE00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav ul li .btn-visit:hover {
+    background-color: #E0A800;
 }
 
 .container {
@@ -22,16 +93,26 @@ body {
     border-radius: 30px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    margin-top: 40px; 
+    margin-bottom: 40px; 
 }
 
 .left-side {
     flex: 1; 
     height: 100%;
     background-image: url("/client/assets/img/pet-recebe-img.png"); 
-    background-size: cover;
+    background-size: cover; 
     background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 30px;
+}
+
+.left-side .logo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .right-side {
@@ -46,6 +127,7 @@ h2 {
     color: #222222;
 }
 
+/* FORMULÁRIO */
 form {
     display: flex;
     flex-direction: column;
@@ -112,18 +194,13 @@ button {
     font-weight: bold;
     border: none;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
     margin-top: 10px;
-    border-radius: 30px;
 }
 
 button:hover {
     background: #e6a600;
-}
-
-p {
-    color: #222222;
 }
 
 .login-link {
@@ -135,4 +212,107 @@ p {
 .login-link a {
     font-weight: bold;
     color: black;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #2E3192;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 8px; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer-icons img {
+    width: 32px;
+    height: auto;
+    filter: invert(73%) sepia(98%) saturate(585%) hue-rotate(-14deg);
+}
+
+.footer-brand h3 {
+    margin-top: 8px;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-section {
+    text-align: left;
+}
+
+.footer-section h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #FABE00;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.social-icons a img {
+    width: 24px;
+    filter: invert(88%) sepia(48%) saturate(2000%) hue-rotate(-14deg);
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
 }
