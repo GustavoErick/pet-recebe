@@ -10,6 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="/client/assets/img/bus-front-fill.svg" alt="Ícone de ônibus">
+                <span class="logo-text">PETRecebe</span>
+                <img src="/client/assets/img/geo-alt-fill.svg" alt="Ícone de localização">
+            </div>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="/client/html/faq.html">dúvidas</a></li>
+                    <li><a href="/client/html/index.html#relatos">relatos</a></li> 
+                    <li><a href="/client/html/index.html#sobre">sobre</a></li>
+                    <li><a href="/client/html/signin.html" class="login">login</a></li>
+                    <li><a href="#" class="btn-visit">agende sua visita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
         
         <div class="left-side">
@@ -29,6 +50,45 @@
 
         <div class="right-side"></div>
     </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-icons">
+                    <img src="/client/assets/img/bus-front-fill.svg" alt="Ícone de ônibus">
+                    <img src="/client/assets/img/geo-alt-fill.svg" alt="Ícone de localização">
+                </div>
+                <h3>PETRecebe</h3>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Informações</h4>
+                <ul>
+                    <li><a href="#">dúvidas</a></li>
+                    <li><a href="#">relatos</a></li>
+                    <li><a href="#">sobre</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Contatos</h4>
+                <p>petrecebe@ufc.br</p>
+                <p>quiosque da tia, 69 - Cedro</p>
+                <p>Quixadá - CE</p>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Redes sociais</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/petsi.ufc/"><img src="/client/assets/img/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com/in/petsi-ufc/"><img src="/client/assets/img/linkedin.svg" alt="LinkedIn"></a>
+                    <a href="http://wa.me/5588981858708"><img src="/client/assets/img/whatsapp.svg" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-copy">© 2025 PETRecebe. Todos os direitos reservados.</p>
+    </footer>  
+    
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script type="module" src="../js/axiosConfig.js"></script>
 <script type="module" src="../js/signin.js"></script>
