@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avaliações - PETRecebe</title>
-    <link rel="stylesheet" href="./assets/css/avaliacoes.css">
+    <title>Registrar Instituição - PETRecebe</title>
+    <link rel="stylesheet" href="/client/assets/css/register-institution.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header class="header">
         <div class="header-container">
             <div class="logo">
@@ -23,18 +24,52 @@
                     <li><a href="#">dúvidas</a></li>
                     <li><a href="#">relatos</a></li>
                     <li><a href="#">sobre</a></li>
-                    <li><a href="/client/auth/signin.html" class="login">login</a></li>
+                    <li><a href="/client/html/signin.html" class="login">login</a></li>
                     <li><a href="#" class="btn-visit">agende sua visita</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+
     <main class="main-container">
-        <h2>Minhas Avaliações</h2>
-        <div id="avaliacoes-container">
-        </div>
+        <section class="register-section">
+            <div class="content-wrapper">
+                <h2>Cadastrar instituição:</h2>
+                <form>
+                    <label for="nome-instituicao">Nome da Instituição</label>
+                    <input type="text" id="nome-instituicao" placeholder="Digite o nome da instituição">
+
+                    <div class="input-group">
+                        <div>
+                            <label for="cidade">Cidade</label>
+                            <select id="cidade">
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="Madalena">Madalena</option>
+                                <option value="Quixadá">Quixadá</option>
+                                <option value="Paraipaba">Paraipaba</option>
+                                <option value="Boa Viagem">Boa Viagem</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="tipo">Tipo</label>
+                            <select id="tipo">
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="EEEP">EEEP</option>
+                                <option value="Ensino Regular">Ensino Regular</option>
+                                <option value="IF">IF</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit">Cadastrar instituição</button>
+                </form>
+            </div>
+        </section>
     </main>
+
 
     <footer class="footer">
         <div class="footer-container">
@@ -72,9 +107,8 @@
             </div>
         </div>
         <p class="footer-copy">© 2025 PETRecebe. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="./js/avaliacoes.js"></script>
+    </footer> 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+<script type="module" src="./js/register-institution.js"></script>
 </body>
 </html>

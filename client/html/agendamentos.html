@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dúvidas Frequentes</title>
-    <link rel="stylesheet" href="/client/assets/css/faq.css">
+    <title>Agendamentos - PETRecebe</title>
+    <link rel="stylesheet" href="./assets/css/agendamentos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-<<<<<<< HEAD
         <div class="header-container">
             <div class="logo">
                 <img src="/client/assets/img/bus-front-fill.svg" alt="Ícone de ônibus">
@@ -24,50 +23,30 @@
                     <li><a href="#">dúvidas</a></li>
                     <li><a href="#">relatos</a></li>
                     <li><a href="#">sobre</a></li>
-                    <li><a href="/client/auth/signin.html" class="login">login</a></li>
-                    <li><a href="/client/" class="btn-visit">agende sua visita</a></li>
+                    <li><a href="/client/html/signin.html" class="login">login</a></li>
+                    <li><a href="#" class="btn-visit">agende sua visita</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
-=======
-        <div class="logo"><img src="/client/assets/img/bus-front-fill.svg"><span class="namelogo">PETRecebe</span><img src="/client/assets/img/geo-alt-fill.svg"></div>
-        <nav class="nav">
-            <a href="/client/faq/faq.html">dúvidas</a>
-            <a href="#">relatos</a>
-            <a href="#">sobre</a>
-            <a href="#">login</a>
-            <a href="/client/calendario/calendario.html" class="btn">agende sua visita</a>
-        </nav>
-    </div>
-</header>
->>>>>>> 886f24996c8b2cc61ff580a40f832d4d19dff287
-    <div class="faq-container">
-        <h1>Dúvidas Frequentes</h1>
-        <div class="faq-item">
-            <input type="checkbox" id="faq1" class="faq-toggle">
-            <label for="faq1" class="faq-question">Quais os cursos ofertados na UFC Quixadá?</label>
-            <div class="faq-answer">
-                <p>A UFC Quixadá oferece cursos como Engenharia de Software, Ciência da Computação, entre outros.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <input type="checkbox" id="faq2" class="faq-toggle">
-            <label for="faq2" class="faq-question">Onde posso consultar as notas de corte?</label>
-            <div class="faq-answer">
-                <pf>As notas de corte podem ser consultadas no site oficial da UFC ou no SISU.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <input type="checkbox" id="faq3" class="faq-toggle">
-            <label for="faq3" class="faq-question">Como saber as disciplinas estudadas?</label>
-            <div class="faq-answer">
-                <p>As ementas estão disponíveis no site de cada curso.</p>
-            </div>
-        </div>
-    </div>
+    <h2>Meus agendamentos</h2>
 
+    <div class="tabela-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>DATA</th>
+                    <th>HORA</th>
+                    <th>QTD. ALUNOS</th>
+                    <th>STATUS</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tabela-visitas">
+                
+            </tbody>
+        </table>
+    </div>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -104,9 +83,8 @@
             </div>
         </div>
         <p class="footer-copy">© 2025 PETRecebe. Todos os direitos reservados.</p>
-    </footer>        
-    
-</main>
-
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./js/agendamentos.js"></script>
 </body>
 </html>

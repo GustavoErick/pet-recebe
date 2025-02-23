@@ -1,25 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+} 
+
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f8f8;
 }
 
-.container {
-    width: 80%;
-    margin: 40px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+h2 {
+  margin: 20px 100px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #222222;
 }
 
-h1 {
-    text-align: center;
-    color: #333;
+.tabela-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0px auto 40px auto;
 }
 
-/* cabeçalho */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead {
+  background: #d9d9d9;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  width: 120px;
+}
+
+.status.aprovado {
+  background-color: #d4ede0;
+  color: #317256;
+}
+
+.status.negado {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.status.pendente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.btn {
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 100px 10px 100px;
+  width: 230px;
+  text-align: center;
+  background: #fbbc04;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmar-btn,
+.recusar-btn {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.confirmar-btn {
+  background-color: #28a745; 
+  color: white;
+}
+
+.confirmar-btn:hover {
+  background-color: #218838;
+}
+
+.recusar-btn {
+  background-color: #dc3545; 
+  color: white;
+}
+
+.recusar-btn:hover {
+  background-color: #c82333;
+}
+
+
 .header {
   background-color: #2E3192;
   padding: 15px 40px;
@@ -90,105 +189,93 @@ h1 {
   background-color: #E0A800;
 }
 
-
-.visit-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+.footer {
+  width: 100%;
+  background-color: #2E3192;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: auto;
 }
 
-.visit-table th, .visit-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-.visit-table th {
-    background-color: #e0e0e0;
-    font-weight: bold;
+.footer-brand {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
 }
 
-.visit-table td {
-    background-color: #fff;
+.footer-icons {
+  display: flex;
+  gap: 8px; 
+  justify-content: center;
+  align-items: center;
 }
 
-/* Status */
-.status {
-    display: inline-block;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-weight: bold;
+.footer-icons img {
+  width: 32px;
+  height: auto;
+  filter: invert(73%) sepia(98%) saturate(585%) hue-rotate(-14deg);
 }
 
-.approved {
-    background-color: #b0e8c4;
-    color: #22733a;
+.footer-brand h3 {
+  margin-top: 8px;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
 }
 
-.denied {
-    background-color: #f8caca;
-    color: #a60000;
+.footer-section {
+  text-align: left;
 }
 
-.pending {
-    background-color: #f7e2a2;
-    color: #8a6900;
+.footer-section h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* Dropdown */
-.status-dropdown {
-    position: relative;
-    display: inline-block;
+.footer-section ul {
+  list-style: none;
+  padding: 0;
 }
 
-.status-btn {
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
+.footer-section ul li {
+  margin-bottom: 5px;
 }
 
-.status-btn.pending {
-    background-color: #f7e2a2;
-    color: #8a6900;
+.footer-section ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
 }
 
-.status-btn.approved {
-    background-color: #b0e8c4;
-    color: #22733a;
+.footer-section p {
+  font-size: 1rem;
+  margin-bottom: 5px;
 }
 
-.status-btn.denied {
-    background-color: #f8caca;
-    color: #a60000;
+.social-icons {
+  display: flex;
+  gap: 10px;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 120px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    overflow: hidden;
-    z-index: 10;
+.social-icons a img {
+  width: 24px;
+  filter: invert(88%) sepia(48%) saturate(2000%) hue-rotate(-14deg);
 }
 
-.dropdown-menu button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: none;
-    text-align: left;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.dropdown-menu button:hover {
-    background-color: #eee;
-}
-
-.dropdown-menu.show {
-    display: block;
+.footer-copy {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 20px;
 }

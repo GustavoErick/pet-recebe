@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamentos - PETRecebe</title>
-    <link rel="stylesheet" href="./assets/css/agendamentos.css">
+    <title>Administração - PETRecebe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/client/assets/css/adm.css">
 </head>
 <body>
+
     <header class="header">
         <div class="header-container">
             <div class="logo">
@@ -17,20 +18,20 @@
                 <span class="logo-text">PETRecebe</span>
                 <img src="/client/assets/img/geo-alt-fill.svg" alt="Ícone de localização">
             </div>
-    
+
             <nav class="nav">
                 <ul>
                     <li><a href="#">dúvidas</a></li>
                     <li><a href="#">relatos</a></li>
                     <li><a href="#">sobre</a></li>
-                    <li><a href="/client/auth/signin.html" class="login">login</a></li>
+                    <li><a href="/client/html/signin.html" class="login">login</a></li>
                     <li><a href="#" class="btn-visit">agende sua visita</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <h2>Meus agendamentos</h2>
-
+    <h2>Solicitações de visita</h2>
+    <a class="btn" href="./historico-solicitacoes.html">Histórico de Solicitações</a>
     <div class="tabela-container">
         <table>
             <thead>
@@ -38,12 +39,15 @@
                     <th>DATA</th>
                     <th>HORA</th>
                     <th>QTD. ALUNOS</th>
+                    <th>SÉRIE</th>
+                    <th>ESCOLA</th>
+                    <th>RESPONSÁVEL</th>
                     <th>STATUS</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody id="tabela-visitas">
-                
+
             </tbody>
         </table>
     </div>
@@ -85,6 +89,6 @@
         <p class="footer-copy">© 2025 PETRecebe. Todos os direitos reservados.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="./js/agendamentos.js"></script>
+    <script type="module" src="../js/adm.js"></script>
 </body>
 </html>
