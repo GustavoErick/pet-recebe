@@ -106,13 +106,37 @@ th, td {
 
 .avaliar-link {
     margin-left: 10px;
-    color: #007bff;
+    color: #28a745;
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
 }
 
 .avaliar-link:hover {
+    text-decoration: underline;
+}
+
+.editar-link {
+    margin-left: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.editar-link:hover {
+    text-decoration: underline;
+}
+
+.deletar-link {
+    margin-left: 10px;
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.deletar-link:hover {
     text-decoration: underline;
 }
 
@@ -138,6 +162,34 @@ th, td {
     text-align: center;
 }
 
+.modal-content-editar {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.modal-content-editar h2 {
+    font-size: 36px;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    font-weight: bold;
+    color: #222222;
+}
+
+input, select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
 textarea {
     width: 100%;
     height: 100px;
@@ -147,7 +199,6 @@ textarea {
     border-radius: 5px;
     font-family: 'Inter', sans-serif
 }
-
 
 .modal-actions {
     margin-top: 15px;
@@ -169,6 +220,11 @@ textarea {
 }
 
 #enviar-avaliacao {
+    background: #fbbc04;
+    color: white;
+}
+
+#salvar-edicao {
     background: #fbbc04;
     color: white;
 }
