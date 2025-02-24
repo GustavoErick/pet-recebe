@@ -15,19 +15,24 @@
         <div class="header-container">
           <div class="logo">
             <img src="/client/assets/img/bus-front-fill.svg" alt="Ícone de ônibus">
-            <span class="logo-text">PETRecebe</span>
+           <a href="/client/html/index.html"><span class="logo-text">PETRecebe</span> </a>
             <img src="/client/assets/img/geo-alt-fill.svg" alt="Ícone de localização">
           </div>
   
           <nav class="nav">
             <ul>
-              <li><a href="/client/html/faq.html">dúvidas</a></li>
-              <li><a href="/client/html/index.html#relatos">relatos</a></li> 
-              <li><a href="/client/html/index.html#sobre">sobre</a></li>
-              <li><a href="/client/html/signin.html" class="login">login</a></li>
-              <li><a href="/client/html/calendario.html" class="btn-visit">agende sua visita</a></li>
+                <li><a href="/client/html/faq.html">dúvidas</a></li>
+                <li><a href="/client/html/index.html#relatos">relatos</a></li> 
+                <li><a href="/client/html/index.html#sobre">sobre</a></li>
+                <li><a href="/client/html/profile.html" class="edperfil" id="perfilButton">editar perfil</a></li>
+                <li><a href="/client/html/agendamentos.html" class="agend" id="agendButton">agendamentos</a></li>
+                <li><a href="/client/html/signin.html" class="login" id="loginLink">login</a></li>
+                <li><button id="logoutButton" class="btn-logout">sair</button></li> 
+                <li><a href="/client/html/calendario.html" class="btn-visit">agende sua visita</a></li>
+                
             </ul>
-          </nav>
+
+        </nav>        
         </div>
       </header>
 
@@ -192,6 +197,7 @@
         
     </main>
     
+    <script src="/client/js/logout.js"></script>
     <script src="/client/js/index.js"></script>
 </body>
 </html>

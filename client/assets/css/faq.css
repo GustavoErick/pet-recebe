@@ -12,6 +12,10 @@ body {
     min-height: 100vh; 
 }
 
+a {
+    text-decoration: none;
+}
+
 .header {
     background-color: #2E3192;
     padding: 15px 40px;
@@ -36,12 +40,14 @@ body {
 .logo img {
     width: 24px;
     filter: invert(73%) sepia(98%) saturate(585%) hue-rotate(-14deg);
+    text-decoration: none;
 }
 
 .logo-text {
     font-size: 1.3rem;
     font-weight: bold;
     color: white;
+    text-decoration: none;
 }
 
 .nav ul {
@@ -57,7 +63,6 @@ body {
 }
 
 .nav ul li a {
-    text-decoration: none;
     color: white;
     font-size: 1rem;
     font-weight: 500;
@@ -81,6 +86,28 @@ body {
 .nav ul li .btn-visit:hover {
     background-color: #E0A800;
 }
+
+#perfilButton, #agendButton, #logoutButton {
+  display: none;
+}
+
+.btn-logout {
+  display: none; /* Oculta o botão inicialmente */
+  background-color: #FF4D4D;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #CC0000;
+}
+
 
 .faq-container {
     width: 100%;
@@ -193,7 +220,6 @@ body {
 }
 
 .footer-section ul li a {
-    text-decoration: none;
     color: white;
     font-size: 1rem;
 }

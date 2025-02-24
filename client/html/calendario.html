@@ -20,14 +20,19 @@
         </div>
 
         <nav class="nav">
-            <ul>
+          <ul>
               <li><a href="/client/html/faq.html">dúvidas</a></li>
               <li><a href="/client/html/index.html#relatos">relatos</a></li> 
               <li><a href="/client/html/index.html#sobre">sobre</a></li>
-              <li><a href="/client/html/signin.html" class="login">login</a></li>
+              <li><a href="/client/html/profile.html" class="edperfil" id="perfilButton">editar perfil</a></li>
+              <li><a href="/client/html/agendamentos.html" class="agend" id="agendButton">agendamentos</a></li>
+              <li><a href="/client/html/signin.html" class="login" id="loginLink">login</a></li>
+              <li><button id="logoutButton" class="btn-logout">sair</button></li> 
               <li><a href="/client/html/calendario.html" class="btn-visit">agende sua visita</a></li>
-            </ul>
-        </nav>
+              
+          </ul>
+
+      </nav> 
     </div>
   </header>
 
@@ -78,5 +83,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="/client/js/calendario.js"></script>
+    <script type="module" src="/client/js/logout.js"></script>
   </body>
 </html>
