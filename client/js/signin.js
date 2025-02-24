@@ -49,7 +49,7 @@ async function login(identificador, senha) {
     localStorage.setItem("token", jwt);
 
     if(userData.role.name == "Admin") {
-      window.location.href = "../html/historico-solicitacoes.html";
+      window.location.href = "../html/adm.html";
     }
     else{
       window.location.href = "../html/index.html";
