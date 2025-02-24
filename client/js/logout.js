@@ -1,17 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
   const logoutButton = document.getElementById("logoutButton");
   const loginLink = document.getElementById("loginLink");
-  const profileButton = document.getElementById("perfilButton");
-  const scheduleButton = document.getElementById("agendButton");
+  const perfilButton = document.getElementById("perfilButton");
+  const agendButton = document.getElementById("agendButton");
 
   const token = localStorage.getItem("token");
+  const userRole = localStorage.getItem("role"); 
 
   if (token) {
-      logoutButton.style.display = "block";
-      perfilButton.style.display = "block";
-      agendButton.style.display = "block";
+      if (logoutButton) logoutButton.style.display = "block";
 
-      loginLink.style.display = "none";
+      if (userRole === "Admin") {
+
+          if (perfilButton) perfilButton.style.display = "none";
+          if (agendButton) agendButton.style.display = "none";
+      } else {
+          if (perfilButton) perfilButton.style.display = "block";
+          if (agendButton) agendButton.style.display = "block";
+      }
+
+      if (loginLink) loginLink.style.display = "none"; 
   }
 
   if (logoutButton) {
@@ -27,5 +35,6 @@ function logout() {
   localStorage.removeItem("role");
   localStorage.removeItem("token");
 
+  // Redireciona para a página de login após logout
   window.location.href = "/client/html/index.html";
 }
