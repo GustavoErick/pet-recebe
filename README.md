@@ -50,7 +50,8 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 ## :spiral_calendar: Entidades ou tabelas do sistema
 
 - **Usuário:**  
-  - E-mail  
+  - E-mail
+  - Senha  
   - Nome  
   - Número de telefone  
   - Cargo (professor, coordenador, diretor, outro)  
@@ -70,7 +71,8 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
   - Duração (horário de início e fim)  
 
 - **Feedback:**  
-  - Relacionamento com visita  
+  - Relacionamento com visita
+  - Relacionamento com usuário  
   - Avaliação
 
 
@@ -85,11 +87,13 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 
 **Frontend:**
 
-Lista as tecnologias, frameworks e bibliotecas utilizados.
+- HTML
+- CSS
+- JavaScript
 
 **Backend:**
 
-Lista as tecnologias, frameworks e bibliotecas utilizados.
+- Strapi
 
 
 ## :shipit: Operações implementadas para cada entidade da aplicação
@@ -97,11 +101,11 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 
 | Entidade| Criação | Leitura | Atualização | Remoção |
 | --- | --- | --- | --- | --- |
-| Entidade 1 | X |  X  |  | X |
-| Entidade 2 | X |    |  X | X |
-| Entidade 3 | X |    |  |  |
+| Usuário | X | X | X | X |
+| Escola | X | X |   |  |
+| Visita | X | X | X | X |
+| Avaliação | X | X | X | X |
 
-> Lembre-se que é necessário implementar o CRUD de pelo menos duas entidades.
 
 ## :neckbeard: Rotas da API REST utilizadas
 

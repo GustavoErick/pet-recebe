@@ -15,19 +15,24 @@
         <div class="header-container">
           <div class="logo">
             <img src="/client/assets/img/bus-front-fill.svg" alt="Ícone de ônibus">
-            <span class="logo-text">PETRecebe</span>
+           <a href="/client/html/index.html"><span class="logo-text">PETRecebe</span> </a>
             <img src="/client/assets/img/geo-alt-fill.svg" alt="Ícone de localização">
           </div>
   
           <nav class="nav">
             <ul>
-              <li><a href="/client/html/faq.html">dúvidas</a></li>
-              <li><a href="/client/html/index.html#relatos">relatos</a></li> 
-              <li><a href="/client/html/index.html#sobre">sobre</a></li>
-              <li><a href="/client/html/signin.html" class="login">login</a></li>
-              <li><a href="/client/html/calendario.html" class="btn-visit">agende sua visita</a></li>
+                <li><a href="/client/html/faq.html">dúvidas</a></li>
+                <li><a href="/client/html/index.html#relatos">relatos</a></li> 
+                <li><a href="/client/html/index.html#sobre">sobre</a></li>
+                <li><a href="/client/html/profile.html" class="edperfil" id="perfilButton">editar perfil</a></li>
+                <li><a href="/client/html/agendamentos.html" class="agend" id="agendButton">agendamentos</a></li>
+                <li><a href="/client/html/signin.html" class="login" id="loginLink">login</a></li>
+                <li><button id="logoutButton" class="btn-logout">sair</button></li> 
+                <li><a href="/client/html/calendario.html" class="btn-visit">agende sua visita</a></li>
+                
             </ul>
-          </nav>
+
+        </nav>        
         </div>
       </header>
 
@@ -96,7 +101,7 @@
             <h2>Relatos</h2>
             <div class="testimonials-container">
                 <div class="testimonial primary">
-                    <p>“Ai foi bom que só a peste e a gente foi lá e fez tal coisa dps fomos no RU e foi massa demais”</p>
+                    <p>“Visitar a universidade foi incrível! Fiquei impressionada com os laboratórios e a recepção dos alunos. Saí ainda mais motivada para o vestibular!”</p>
                     <div class="testimonial-footer">
                         <img src="/client/assets/img/menina1.jpg" alt="Foto de uma menina">
                         <div class="testimonial-info">
@@ -107,7 +112,7 @@
                 </div>
         
                 <div class="testimonial secondary">
-                    <p>“Ai foi bom que só a peste e a gente foi lá e fez tal coisa dps fomos no RU e foi massa demais”</p>
+                    <p>“Eu tinha dúvidas sobre qual curso escolher, mas após a visita percebi que Engenharia de Computação é para mim. Amei o ambiente acadêmico!”</p>
                     <div class="testimonial-footer">
                         <img src="/client/assets/img/menino1.jpg" alt="Foto de um menino">
                         <div class="testimonial-info">
@@ -118,7 +123,7 @@
                 </div>
         
                 <div class="testimonial light">
-                    <p>“Ai foi bom que só a peste e a gente foi lá e fez tal coisa dps fomos no RU e foi massa demais”</p>
+                    <p>“Participei de um evento na universidade e adorei! Conheci laboratórios, assisti a palestras e agora penso em fazer uma pós-graduação na área.”</p>
                     <div class="testimonial-footer">
                         <img src="/client/assets/img/menino2.jpg" alt="Foto de um menino">
                         <div class="testimonial-info">
@@ -129,7 +134,7 @@
                 </div>
         
                 <div class="testimonial light">
-                    <p>“Ai foi bom que só a peste e a gente foi lá e fez tal coisa dps fomos no RU e foi massa demais”</p>
+                    <p>“Revisitar a universidade foi emocionante. Reencontrei professores, vi a biblioteca e pude compartilhar minha experiência com os novos alunos!”</p>
                     <div class="testimonial-footer">
                         <img src="/client/assets/img/professora1.webp" alt="foto de uma professora">
                         <div class="testimonial-info">
@@ -192,6 +197,7 @@
         
     </main>
     
+    <script src="/client/js/logout.js"></script>
     <script src="/client/js/index.js"></script>
 </body>
 </html>

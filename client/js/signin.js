@@ -48,7 +48,12 @@ async function login(identificador, senha) {
     localStorage.setItem("role", userData.role.name);
     localStorage.setItem("token", jwt);
 
-    window.location.href = "../html/index.html";
+    if(userData.role.name == "Admin") {
+      window.location.href = "../html/adm.html";
+    }
+    else{
+      window.location.href = "../html/index.html";
+    }
   } catch (error) {
     console.error("Erro no login:", error);
 
