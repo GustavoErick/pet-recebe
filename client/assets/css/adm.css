@@ -101,38 +101,27 @@ th, td {
   text-decoration: none;
 }
 
-.action-buttons {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
+.confirmar-link {
+  margin-left: 10px;
+  color: #28a745;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
 }
 
-.confirmar-btn,
-.recusar-btn {
-  padding: 10px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+.confirmar-link:hover {
+  text-decoration: underline;
 }
 
-.confirmar-btn {
-  background-color: #28a745; 
-  color: white;
+.recusar-link {
+  color: #dc3545;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
 }
 
-.confirmar-btn:hover {
-  background-color: #218838;
-}
-
-.recusar-btn {
-  background-color: #dc3545; 
-  color: white;
-}
-
-.recusar-btn:hover {
-  background-color: #c82333;
+.recusar-link:hover {
+  text-decoration: underline;
 }
 
 

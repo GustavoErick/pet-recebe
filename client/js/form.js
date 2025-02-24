@@ -14,7 +14,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const selectEscola = document.getElementById("escola");
   const form = document.querySelector("form");
   const token = localStorage.getItem("token");
-
+  
+  if (!token) {
+    alert("Usuário não autenticado. Faça login novamente.");
+    window.location.href = "signin.html";
+    return;
+  }
+  
   try {
     const res = await api.get("/escolas", {
       headers: { Authorization: `Bearer ${token}` },

@@ -1,6 +1,14 @@
 import api from "./axiosConfig.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  const token = localStorage.getItem("token");
+  if (token) {
+      alert("Usuário já autenticado!");
+      window.location.href = "index.html";
+      return;
+  }
+  
   const signupForm = document.getElementById("signupForm");
   const nomeInput = document.getElementById("nome");
   const sobrenomeInput = document.getElementById("sobrenome");
@@ -22,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const senha = senhaInput.value.trim();
       const aceitouTermos = termosCheckbox.checked;
 
-      if (!nome || !sobrenome || !email || !senha) {
+      if (!nome || !sobrenome || !email || !senha || !telefone || !cargo) {
         alert("Por favor, preencha todos os campos.");
         return;
       }

@@ -49,11 +49,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             let statusHTML = `<span class="status pendente">Pendente</span>`;
 
-            const actionButtons = `
-                <td class="action-buttons">
-                    <button class="confirmar-btn" data-documentId="${documentId}" title="Confirmar visita">Confirmar</button>
-                    <button class="recusar-btn" data-documentId="${documentId}" title="Recusar visita">Recusar</button>
-                </td>
+            // const actionButtons = `
+            //     <td class="action-buttons">
+            //         <button class="confirmar-btn" data-documentId="${documentId}" title="Confirmar visita">Confirmar</button>
+            //         <button class="recusar-btn" data-documentId="${documentId}" title="Recusar visita">Recusar</button>
+            //     </td>
+            // `;
+
+            const actionsHTML = `
+                <a href="#" class="confirmar-link" data-documentId="${documentId}">Confirmar</a> | 
+                <a href="#" class="recusar-link" data-documentId="${documentId}">Recusar</a>
             `;
 
             const row = `
@@ -65,21 +70,21 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <td>${escola ? escola.nome : "Não informado"}</td>
                     <td>${responsavel ? responsavel.username : "Não informado"}</td>
                     <td>${statusHTML}</td>
-                    ${actionButtons}
+                    <td>${actionsHTML}</td>
                 </tr>
             `;
             tabelaVisitas.innerHTML += row;
         });
 
-        document.querySelectorAll(".confirmar-btn").forEach(button => {
-            button.addEventListener("click", async (e) => {
+        document.querySelectorAll(".confirmar-link").forEach(link => {
+            link.addEventListener("click", async (e) => {
                 const visitaDocumentId = e.target.getAttribute("data-documentId");
                 await atualizarStatusVisita(visitaDocumentId, "Confirmada");
             });
         });
 
-        document.querySelectorAll(".recusar-btn").forEach(button => {
-            button.addEventListener("click", async (e) => {
+        document.querySelectorAll(".recusar-link").forEach(link => {
+            link.addEventListener("click", async (e) => {
                 const visitaDocumentId = e.target.getAttribute("data-documentId");
                 await atualizarStatusVisita(visitaDocumentId, "Recusada");
             });

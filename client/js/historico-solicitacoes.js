@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         if (userRole !== "Admin") {
-            alert("Acesso negado! Apenas administradores podem visualizar essa página.");
+            alert("Acesso negado! Usuário não autorizado.");
             window.location.href = "index.html";
             return;
         }

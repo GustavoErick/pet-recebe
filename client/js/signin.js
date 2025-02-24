@@ -1,6 +1,14 @@
 import api from "./axiosConfig.js"
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  const token = localStorage.getItem("token");
+  if (token) {
+      alert("Usuário já autenticado!");
+      window.location.href = "index.html";
+      return;
+  }
+
   const loginForm = document.getElementById("loginForm");
   const emailInput = document.getElementById("email");
   const senhaInput = document.getElementById("senha");

@@ -1,8 +1,15 @@
 import api from "./axiosConfig.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+    
+    const token = localStorage.getItem("token");
+    if (!token) {
+        alert("Usuário não autenticado. Faça login novamente.");
+        window.location.href = "signin.html";
+        return;
+    }
+    
     const form = document.querySelector("form");
-
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
@@ -16,12 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-            const token = localStorage.getItem("token");
-            if (!token) {
-                alert("Usuário não autenticado. Faça login novamente.");
-                window.location.href = "signin.html";
-                return;
-            }
 
             const response = await api.post("/escolas", {
                 data: {
