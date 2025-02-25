@@ -101,30 +101,46 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 
 ## :neckbeard: Rotas da API REST utilizadas
 
+## Endpoints da API
+
+### Autenticação
 | Método HTTP | URL |
-| AUTENTICAÇÃO | --- |
-| POST | api/auth/local/register |
-| POST | api/auth/local |
-| USUÁRIO | --- |
-| GET | api/users/me |
-| GET | api/users/me?populate=role |
-| GET | api/users/${userId} |
-| PUT | api/users/${userId} |
-| ESCOLA | --- |
-| GET | api/escolas |
-| POST | api/escolas |
-| VISITA | --- |
-| GET | api/visitas |
-| GET | api/visitas?populate=* |
-| GET | api/visitas/${documentIdVisita}?populate=* |
-| GET | api/visitas?filters[responsavel][$eq]=${userId}&populate=* |
-| GET | api/visitas?filters[situacao][$eq]=Pendente&populate=* |
-| POST | api/visitas |
-| PUT | api/visitas/${documentIdVisita} |
-| DELETE | api/visitas/${documentIdVisita} |
-| AVALIAÇÃO | --- |
-| GET | api/avaliacaos?filters[responsavel][$eq]=${userId}&populate=visita.escola |
-| POST | api/avaliacaos/ |
-| PUT | api/avaliacaos/${documentIdAvaliacao} |
-| DELETE | api/avaliacaos/${documentIdAvaliacao} |
+|------------|--------------------------------|
+| POST       | api/auth/local/register       |
+| POST       | api/auth/local                |
+
+### Usuário
+| Método HTTP | URL |
+|------------|--------------------------------|
+| GET        | api/users/me                  |
+| GET        | api/users/me?populate=role    |
+| GET        | api/users/${userId}           |
+| PUT        | api/users/${userId}           |
+
+### Escola
+| Método HTTP | URL |
+|------------|--------------------------------|
+| GET        | api/escolas                   |
+| POST       | api/escolas                   |
+
+### Visita
+| Método HTTP | URL |
+|------------|-----------------------------------------------------------|
+| GET        | api/visitas                                               |
+| GET        | api/visitas?populate=*                                    |
+| GET        | api/visitas/${documentIdVisita}?populate=*                |
+| GET        | api/visitas?filters[responsavel][$eq]=${userId}&populate=* |
+| GET        | api/visitas?filters[situacao][$eq]=Pendente&populate=*     |
+| POST       | api/visitas                                               |
+| PUT        | api/visitas/${documentIdVisita}                           |
+| DELETE     | api/visitas/${documentIdVisita}                           |
+
+### Avaliação
+| Método HTTP | URL |
+|------------|-----------------------------------------------------------|
+| GET        | api/avaliacaos?filters[responsavel][$eq]=${userId}&populate=visita.escola |
+| POST       | api/avaliacaos/                                           |
+| PUT        | api/avaliacaos/${documentIdAvaliacao}                     |
+| DELETE     | api/avaliacaos/${documentIdAvaliacao}                     |
+
 
