@@ -14,7 +14,6 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 
 ## :eyes: Público-Alvo
 
-
 - Escolas de ensino médio e técnico interessadas em realizar visitas técnicas ao campus da UFC em Quixadá;  
 - Estudantes que desejam conhecer o ambiente acadêmico e os cursos de tecnologia da informação.
 
@@ -26,26 +25,25 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 
-- **Usuário não logado:** Acessa informações públicas, como fotos, feedbacks, e detalhes sobre o campus e cursos.  
-- **Responsável pela escola:** Usuário logado que realiza a solicitação de visitas e gerencia informações sobre a escola.  
-- **Administrador:** Bolsista PET que gerencia as solicitações e aprova ou recusa visitas.
-
-> Tenha em mente que obrigatoriamente a aplicação deve possuir funcionalidades acessíveis a todos os tipos de usuário e outra funcionalidades restritas a certos tipos de usuários.
+- Usuário não logado;
+- Responsável pela escola (usuário logado);
+- Administrador. 
+- Login do Administrador -> email: petsi@email.com, senha: senha123
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
 #### **Usuário não logado:**  
-- Visualização de páginas com informações sobre o projeto e o campus.  
+- Visualização de páginas com informações públicas, como fotos, informações do projeto e dúvidas frequentes.  
 
 #### **Usuário logado (responsável):**  
-- CRUD de perfil de usuário;  
-- Solicitação de visita;  
-- Cadastro de escola;  
-- Visualização de histórico de solicitações (pendentes, confirmadas, recusadas).  
+- Visualizar e atualizar seus dados;
+- Visualizar, criar, atualizar e deletar solicitações de visitas;  
+- Cadastrar escola;  
+- Visualizar, criar, editar e deletar avaliações de visitas;
 
 #### **Administrador:**  
-- Gerenciamento de solicitações de visita (aprovar, recusar);  
-- Cadastro de escola.  
+- Gerenciar solicitações de visita (aprovar, recusar);
+- Visualizar histórico de solicitações de visitas de todos os usuários;
 
 ## :spiral_calendar: Entidades ou tabelas do sistema
 
@@ -64,24 +62,17 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 - **Visita:**  
   - Relacionamento com responsável  
   - Relacionamento com escola  
-  - Quantidade de alunos  
+  - Quantidade de alunos
+  - Situação (confirmada, pendente, recusada)   
   - Série  
   - Curso (opcional)  
   - Data  
   - Duração (horário de início e fim)  
 
-- **Feedback:**  
+- **Avaliação:**  
   - Relacionamento com visita
   - Relacionamento com usuário  
   - Avaliação
-
-
-----
-
-:warning::warning::warning: As informações a seguir devem ser enviadas juntamente com a versão final do projeto. :warning::warning::warning:
-
-
-----
 
 ## :desktop_computer: Tecnologias e frameworks utilizados
 
@@ -90,6 +81,7 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 - HTML
 - CSS
 - JavaScript
+- Axios
 
 **Backend:**
 
@@ -101,15 +93,38 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 
 | Entidade| Criação | Leitura | Atualização | Remoção |
 | --- | --- | --- | --- | --- |
-| Usuário | X | X | X | X |
-| Escola | X | X |   |  |
+| Usuário | X | X | X |  |
+| Escola | X | X |  |  |
 | Visita | X | X | X | X |
-| Avaliação | X | X | X | X |
+| Feedback | X | X | X | X |
 
 
 ## :neckbeard: Rotas da API REST utilizadas
 
 | Método HTTP | URL |
-| --- | --- |
-| GET | api/entidade1/|
-| POST | api/entidade2 |
+| AUTENTICAÇÃO | --- |
+| POST | api/auth/local/register |
+| POST | api/auth/local |
+| USUÁRIO | --- |
+| GET | api/users/me |
+| GET | api/users/me?populate=role |
+| GET | api/users/${userId} |
+| PUT | api/users/${userId} |
+| ESCOLA | --- |
+| GET | api/escolas |
+| POST | api/escolas |
+| VISITA | --- |
+| GET | api/visitas |
+| GET | api/visitas?populate=* |
+| GET | api/visitas/${documentIdVisita}?populate=* |
+| GET | api/visitas?filters[responsavel][$eq]=${userId}&populate=* |
+| GET | api/visitas?filters[situacao][$eq]=Pendente&populate=* |
+| POST | api/visitas |
+| PUT | api/visitas/${documentIdVisita} |
+| DELETE | api/visitas/${documentIdVisita} |
+| AVALIAÇÃO | --- |
+| GET | api/avaliacaos?filters[responsavel][$eq]=${userId}&populate=visita.escola |
+| POST | api/avaliacaos/ |
+| PUT | api/avaliacaos/${documentIdAvaliacao} |
+| DELETE | api/avaliacaos/${documentIdAvaliacao} |
+
