@@ -101,13 +101,12 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 
 ## :neckbeard: Rotas da API REST utilizadas
 
-## Endpoints da API
-
 ### Autenticação
 | Método HTTP | URL |
 |------------|--------------------------------|
 | POST       | api/auth/local/register       |
 | POST       | api/auth/local                |
+
 
 ### Usuário
 | Método HTTP | URL |
@@ -117,11 +116,13 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 | GET        | api/users/${userId}           |
 | PUT        | api/users/${userId}           |
 
+
 ### Escola
 | Método HTTP | URL |
 |------------|--------------------------------|
 | GET        | api/escolas                   |
 | POST       | api/escolas                   |
+
 
 ### Visita
 | Método HTTP | URL |
@@ -134,6 +135,7 @@ Informatizar os processos do projeto PET Recebe, com foco no gerenciamento das s
 | POST       | api/visitas                                               |
 | PUT        | api/visitas/${documentIdVisita}                           |
 | DELETE     | api/visitas/${documentIdVisita}                           |
+
 
 ### Avaliação
 | Método HTTP | URL |
